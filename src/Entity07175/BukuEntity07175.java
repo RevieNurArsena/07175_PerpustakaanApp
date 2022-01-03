@@ -4,8 +4,12 @@ public class BukuEntity07175 {
     private String isbn07175, judul07175, penerbit07175; 
     private int terbit07175, halaman07175;
 
+    public BukuEntity07175(){
+        
+    }
+    
     public BukuEntity07175(String isbn07175, String judul07175, String penerbit07175, 
-            int terbit07175, int halaman07175) {
+        int terbit07175, int halaman07175) {
         this.isbn07175 = isbn07175;
         this.judul07175 = judul07175;
         this.penerbit07175 = penerbit07175;
