@@ -74,10 +74,10 @@ public class AnggotaModelInterfaceImpl07175 implements AnggotaModelInterface0717
     public AnggotaEntity07175 getId07175(int id07175) {
         AnggotaEntity07175 anggota07175 =  null;
         try {
-            String sql = "SELECT * FROM anggota WHERE anggota_aktif = TRUE AND anggota_id = ?";
+            String sql = "SELECT * FROM anggota WHERE anggota_aktif = TRUE AND anggota_id=?";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setInt(1, id07175);
-            ResultSet rs07175 = stat07175.executeQuery(sql);
+            ResultSet rs07175 = stat07175.executeQuery();
             while(rs07175.next()){
                 anggota07175 = new AnggotaEntity07175(rs07175.getString("anggota_nama"), rs07175.getString("anggota_password"), rs07175.getString("anggota_notelp"), rs07175.getString("anggota_alamat"));
                 anggota07175.setId07175(rs07175.getInt("anggota_id"));
@@ -133,6 +133,7 @@ public class AnggotaModelInterfaceImpl07175 implements AnggotaModelInterface0717
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setString(1, password07175);
             stat07175.setInt(2, id07175);
+            stat07175.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
         }

@@ -18,7 +18,7 @@ public class BukuModelInterfaceImpl07175 implements BukuModelInterface07175{
             stat07175.setString(2, buku07175.getJudul07175());
             stat07175.setString(3, buku07175.getPenerbit07175());
             stat07175.setInt(4, buku07175.getTerbit07175());
-            stat07175.setInt(4, buku07175.getHalaman07175());
+            stat07175.setInt(5, buku07175.getHalaman07175());
             stat07175.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
@@ -92,10 +92,10 @@ public class BukuModelInterfaceImpl07175 implements BukuModelInterface07175{
         BukuEntity07175 buku07175 = null;
         
         try{
-            String sql = "SELECT * FROM buku WHERE buku_ketersediaan = TRUE AND buku_isbn = ?";
+            String sql = "SELECT * FROM buku WHERE buku_ketersediaan = 1 AND buku_isbn = ?";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setString(1, isbn07175);
-            ResultSet rs07175 = stat07175.executeQuery(sql);
+            ResultSet rs07175 = stat07175.executeQuery();
             while(rs07175.next()){
                 buku07175 = new BukuEntity07175();
                 buku07175.setIsbn07175(rs07175.getString("buku_isbn"));

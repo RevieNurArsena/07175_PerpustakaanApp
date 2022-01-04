@@ -8,7 +8,7 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
 
     @Override
     public void insert07175(String nama07175, String password07175, String noTelp, String alamat) {
-         AllObjectModel07175.anggotaModel07175.add07175(new AnggotaEntity07175(nama07175, password07175, noTelp, nama07175));
+         AllObjectModel07175.anggotaModel07175.add07175(new AnggotaEntity07175(nama07175, password07175, noTelp, alamat));
     }
 
     @Override

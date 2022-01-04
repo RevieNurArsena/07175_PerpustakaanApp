@@ -17,11 +17,11 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
         String newId07175 = null;
         String data07175;
         try{
-        String sql = "SELECT peminjaman_id FROM peminjaman ORDER BY peminjaman_id DESC LIMIT 1";
+        String sql = "SELECT peminjam_id FROM peminjaman ORDER BY peminjam_id DESC LIMIT 1";
             Statement stat07175 = conn07175.createStatement();
             ResultSet rs07175 = stat07175.executeQuery(sql);
             if(rs07175.next()){
-                data07175 = rs07175.getString("peminjama_id");
+                data07175 = rs07175.getString("peminjam_id");
             }else {
                 data07175 = "PJM000";
             }
@@ -38,7 +38,7 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
     @Override
     public void add07175(PeminjamanEntity07175 peminjaman07175) {
         try {
-            String sql = "INSERT INTO peminjaman(peminjaman_id, buku_isbn, anggota_id, peminjaman_tgl, status) VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO peminjaman(peminjam_id, buku_isbn, anggota_id, peminjaman_tgl, status) VALUES(?,?,?,?,?)";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setString(1, generateIdPeminjaman());
             stat07175.setString(2, peminjaman07175.getBuku07175().getIsbn07175());
@@ -54,7 +54,7 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
     @Override
     public void verifPengembalian07175(String idPeminjaman07175) {
         try {
-            String sql = "UPDATE peminjaman SET peminjaman_status = TRUE WHERE peminjaman_id = ?";
+            String sql = "UPDATE peminjaman SET status = TRUE WHERE peminjam_id = ?";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setString(1, idPeminjaman07175);
             stat07175.executeUpdate();
@@ -68,17 +68,13 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
         ArrayList<PeminjamanEntity07175> arrPeminjaman07175 = new ArrayList<>();
         
         try {
-            String sql = "SElECT p.*, b.buku_judul, a.anggota_nama, a.anggota_password"
-                    + "FROM peminjaman p"
-                    + "JOIN anggota a ON p.anggota_id = anggota_id"
-                    + "JOIN buku b ON p.bukuisbn = b.bukuisbn"
-                    + "ORDER BY peminjaman_id";
+            String sql = "SElECT p.*, b.buku_judul, a.anggota_nama, a.anggota_password FROM peminjaman p JOIN anggota a ON p.anggota_id = a.anggota_id JOIN buku b ON p.buku_isbn = b.buku_isbn ORDER BY peminjam_id";
             Statement stat07175 = conn07175.createStatement();
             ResultSet rs07175 = stat07175.executeQuery(sql);
             while(rs07175.next()){
                 PeminjamanEntity07175 peminjaman07175 = new PeminjamanEntity07175();
                 BukuEntity07175 buku07175 = new BukuEntity07175();
-                peminjaman07175.setIdPeminjaman07175(rs07175.getString("peminjaman_id"));
+                peminjaman07175.setIdPeminjaman07175(rs07175.getString("peminjam_id"));
                 buku07175.setIsbn07175(rs07175.getString("buku_isbn"));
                 buku07175.setJudul07175(rs07175.getString("buku_judul"));
                 peminjaman07175.setBuku07175(buku07175);
@@ -86,7 +82,7 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
                 
                 peminjaman07175.setAnggota07175(anggota07175);
                 peminjaman07175.setTglPeminjaman07175(rs07175.getDate("peminjaman_tgl"));
-                peminjaman07175.setTglPengembalian07175(rs07175.getDate("pemgembalian_tgl"));
+                peminjaman07175.setTglPengembalian07175(rs07175.getDate("pengembalian_tgl"));
                 peminjaman07175.setStatusPeminjaman07175(rs07175.getBoolean("status"));
                 arrPeminjaman07175.add(peminjaman07175);
             }
@@ -100,22 +96,22 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
     public ArrayList<PeminjamanEntity07175> getByPeminjam(int id07175) {
         ArrayList<PeminjamanEntity07175> arrPeminjaman07175 = new ArrayList<>();
         try {
-            String sql = "SELECT p.*, b.buku_judul FROM peminjaman p JOIN buku b ON p.buku_isbn = b.bukuisbn WHERE anggota_id = ? ORDER BY peminjaman_tgl";
+            String sql = "SELECT p.*, b.buku_judul FROM peminjaman p JOIN buku b ON p.buku_isbn = b.buku_isbn WHERE anggota_id = ? ORDER BY peminjaman_tgl";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
             stat07175.setInt(1, id07175);
             ResultSet rs07175 = stat07175.executeQuery();
             while(rs07175.next()){
                 PeminjamanEntity07175 peminjaman07175 = new PeminjamanEntity07175();
                 BukuEntity07175 buku07175 = new BukuEntity07175();
-                peminjaman07175.setIdPeminjaman07175(rs07175.getString("peminjaman_id"));
+                peminjaman07175.setIdPeminjaman07175(rs07175.getString("peminjam_id"));
                 buku07175.setIsbn07175(rs07175.getString("buku_isbn"));
                 buku07175.setJudul07175(rs07175.getString("buku_judul"));
                 peminjaman07175.setBuku07175(buku07175);
-                AnggotaEntity07175 anggota07175 = new AnggotaEntity07175(rs07175.getString("anggota_nama"), rs07175.getString("anggota_password"));
+                //AnggotaEntity07175 anggota07175 = new AnggotaEntity07175(rs07175.getString("anggota_nama"), rs07175.getString("anggota_password"));
                 
-                peminjaman07175.setAnggota07175(anggota07175);
+                //peminjaman07175.setAnggota07175(anggota07175);
                 peminjaman07175.setTglPeminjaman07175(rs07175.getDate("peminjaman_tgl"));
-                peminjaman07175.setTglPengembalian07175(rs07175.getDate("pemgembalian_tgl"));
+                peminjaman07175.setTglPengembalian07175(rs07175.getDate("pengembalian_tgl"));
                 peminjaman07175.setStatusPeminjaman07175(rs07175.getBoolean("status"));
                 arrPeminjaman07175.add(peminjaman07175);
             }

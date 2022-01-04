@@ -20,5 +20,9 @@ public class DbUtil07175 {
         }
         return conn07175;
     }
+    
+    public static void main(String[] args) {
+        DbUtil07175.getconection07175();
+    }
 }
 

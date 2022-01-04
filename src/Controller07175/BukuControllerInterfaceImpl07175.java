@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class BukuControllerInterfaceImpl07175 implements BukuControllerInterface07175{
 
     @Override
-    public void insertBuku07175(String isbn07175, String judul07175, String penerbit07175, String terbit07175, int halaman07175) {
-        AllObjectModel07175.bukuModel07175.add07175(new BukuEntity07175(isbn07175, judul07175, penerbit07175, halaman07175, halaman07175));
+    public void insertBuku07175(String isbn07175, String judul07175, String penerbit07175, int terbit07175, int halaman07175) {
+        AllObjectModel07175.bukuModel07175.add07175(new BukuEntity07175(isbn07175, judul07175, penerbit07175, terbit07175, halaman07175));
     }
 
     @Override
