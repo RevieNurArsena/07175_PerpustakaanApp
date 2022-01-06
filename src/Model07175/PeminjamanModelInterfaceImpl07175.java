@@ -54,9 +54,10 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
     @Override
     public void verifPengembalian07175(String idPeminjaman07175) {
         try {
-            String sql = "UPDATE peminjaman SET status = TRUE WHERE peminjam_id = ?";
+            String sql = "UPDATE peminjaman SET status = TRUE, pengembalian_tgl = ? WHERE peminjam_id = ?";
             PreparedStatement stat07175 = conn07175.prepareStatement(sql);
-            stat07175.setString(1, idPeminjaman07175);
+            stat07175.setDate(1, Date.valueOf(LocalDate.now()));
+            stat07175.setString(2, idPeminjaman07175);
             stat07175.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();

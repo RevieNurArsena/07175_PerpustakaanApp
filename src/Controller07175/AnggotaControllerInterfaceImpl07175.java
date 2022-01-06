@@ -3,6 +3,7 @@ package Controller07175;
 import Entity07175.AnggotaEntity07175;
 import Controller07175.AllObjectModel07175;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInterface07175{
 
@@ -39,6 +40,59 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
                 AllObjectModel07175.anggotaModel07175.updateNotelp07175(data07175, id07175);
                 break;
         }
+    }
+    
+    public int cari07175(int id07175){
+        int i=0, cari07175=-1;
+        
+        while(i < showAllData().size()){
+            if(id07175 == showAllData().get(i).getId07175()){
+                cari07175 = i;
+            }
+            i++;
+        }
+        return cari07175;
+    }
+    
+    public DefaultTableModel daftarDataMurid07175(){
+        DefaultTableModel dataAnggota07175 = new DefaultTableModel();
+        
+        Object [] kolom07175 = {"ID", "USERNAME" ,"PASSWORD", "NO TELPON", "ALAMAT"};
+        dataAnggota07175.setColumnIdentifiers(kolom07175);
+        int size07175 = AllObjectModel07175.anggotaModel07175.getAll().size();
+        for(int i=0; i<size07175; i++){
+            Object[] data07175 = new Object[5];
+            
+            data07175[0] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getId07175();
+            data07175[1] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getNama07175();
+            data07175[2] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getPassword07175();
+            data07175[3] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getNoTelp07175();
+            data07175[4] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getAlamat07175();
+            
+            dataAnggota07175.addRow(data07175);
+        }
+        return dataAnggota07175;
+    }
+    
+    public DefaultTableModel daftarDataMurid07175(int cek07175){
+        int i = cari07175(cek07175);
+        DefaultTableModel dataAnggota07175 = new DefaultTableModel();
+        
+        Object [] kolom07175 = {"ID", "USERNAME" ,"PASSWORD", "NO TELPON", "ALAMAT"};
+        dataAnggota07175.setColumnIdentifiers(kolom07175);
+        int size07175 = AllObjectModel07175.anggotaModel07175.getAll().size();
+        for(int x=0; i<size07175; i++){
+            Object[] data07175 = new Object[5];
+            
+            data07175[0] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getId07175();
+            data07175[1] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getNama07175();
+            data07175[2] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getPassword07175();
+            data07175[3] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getNoTelp07175();
+            data07175[4] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getAlamat07175();
+            
+            dataAnggota07175.addRow(data07175);
+        }
+        return dataAnggota07175;
     }
     
 }
