@@ -2,11 +2,10 @@ package GUI07175;
 
 import Controller07175.*;
 import java.awt.*;
-import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class HapusAnggota07175 {
+public class resetPassword07175 {
     JFrame logV07175 = new JFrame();
     JLabel judul07175 , label07175, labelid07175;
     JTable tableview07175;
@@ -16,13 +15,13 @@ public class HapusAnggota07175 {
     private AdminControllerInterface07175 admin = new AdminControllerInterfaceImpl07175();
     private AnggotaControllerInterface07175 anggota = new AnggotaControllerInterfaceImpl07175();
     
-    public HapusAnggota07175(){
+    public resetPassword07175(){
         logV07175.setSize(700, 400);
         logV07175.setLayout(null);
         logV07175.getContentPane().setBackground(Color.WHITE);
         
-        judul07175 = new JLabel("HAPUD DATA ANGGOTA");
-        judul07175.setBounds(270, 10, 600, 50);
+        judul07175 = new JLabel("RESET DATA ANGGOTA");
+        judul07175.setBounds(170, 10, 600, 50);
         judul07175.setFont(new Font("Arial", Font.BOLD, 30));
         logV07175.add(judul07175);
         
@@ -44,7 +43,7 @@ public class HapusAnggota07175 {
         id07175.setBounds(30, 250, 100, 30);
         logV07175.add(id07175);
         
-        btnback07175 = new JButton("Hapus");
+        btnback07175 = new JButton("Reset");
         btnback07175.setBounds(150, 250, 100, 30);
         logV07175.add(btnback07175);
         
@@ -59,8 +58,8 @@ public class HapusAnggota07175 {
         btnback07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                admin.hapusAnggota07175(Integer.valueOf(id07175.getText()));
-                HapusAnggota07175 ha = new HapusAnggota07175();
+                admin.resetPassAnggota07175(Integer.valueOf(id07175.getText()));
+                resetPassword07175 r = new resetPassword07175();
                 logV07175.dispose();
             }
         });
@@ -75,6 +74,6 @@ public class HapusAnggota07175 {
     }
     
     public static void main(String[] args) {
-        HapusAnggota07175 h = new HapusAnggota07175();
+        resetPassword07175 r = new resetPassword07175();
     }
 }

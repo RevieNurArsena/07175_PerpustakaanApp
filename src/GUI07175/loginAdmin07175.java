@@ -78,7 +78,7 @@ public class loginAdmin07175 {
                         }else {
                            JOptionPane.showMessageDialog(null, "Login Berhasil", 
                                 "information", JOptionPane.INFORMATION_MESSAGE);
-                           //MenuAdmin07175 menuAdmin07175 = new MenuAdmin07175();
+                           MenuAdmin07175 menuAdmin07175 = new MenuAdmin07175();
                            log07175.dispose();
                         }      
                 }

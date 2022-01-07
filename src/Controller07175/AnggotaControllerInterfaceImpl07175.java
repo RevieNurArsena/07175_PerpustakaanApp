@@ -81,7 +81,7 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
         Object [] kolom07175 = {"ID", "USERNAME" ,"PASSWORD", "NO TELPON", "ALAMAT"};
         dataAnggota07175.setColumnIdentifiers(kolom07175);
         int size07175 = AllObjectModel07175.anggotaModel07175.getAll().size();
-        for(int x=0; i<size07175; i++){
+        
             Object[] data07175 = new Object[5];
             
             data07175[0] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getId07175();
@@ -91,7 +91,7 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
             data07175[4] = AllObjectModel07175.anggotaModel07175.getAll().get(i).getAlamat07175();
             
             dataAnggota07175.addRow(data07175);
-        }
+        
         return dataAnggota07175;
     }
     

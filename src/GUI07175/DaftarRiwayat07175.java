@@ -5,33 +5,32 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
-public class DaftarBuku07175 {
+public class DaftarRiwayat07175 {
     JFrame logV07175 = new JFrame();
     JLabel judul07175 , label07175;
     JTable tableview07175;
     JScrollPane scroll;
     JButton backbutton07175, btnback07175;
-    private BukuControllerInterface07175 buku07175 = new BukuControllerInterfaceImpl07175();
+    private PeminjamanControllerInterface07175 peminjam = new PeminjamanControllerInterfaceImpl07175();
     
-    public DaftarBuku07175(){
+    public DaftarRiwayat07175(int cek){
         logV07175.setSize(700, 630);
         logV07175.setLayout(null);
         logV07175.getContentPane().setBackground(Color.WHITE);
         
-        judul07175 = new JLabel("VIEW DATA");
-        judul07175.setBounds(270, 10, 600, 50);
+        judul07175 = new JLabel("VIEW DATA PEMINJAMAN");
+        judul07175.setBounds(170, 10, 600, 50);
         judul07175.setFont(new Font("Arial", Font.BOLD, 30));
         logV07175.add(judul07175);
         
-        label07175 = new JLabel("Daftar Buku : ");
-        label07175.setBounds(30, 60, 100, 50);
+        label07175 = new JLabel("Daftar Riwayat Peminjaman : ");
+        label07175.setBounds(30, 60, 200, 50);
         logV07175.add(label07175);
         
         tableview07175 = new JTable();
         scroll = new JScrollPane(tableview07175);
         scroll.setBounds(30, 100, 620, 400);
-        tableview07175.setModel(buku07175.daftarBuku07175());
+        tableview07175.setModel(peminjam.daftarPeminjamById07175(cek));
         logV07175.add(scroll);
         
         btnback07175 = new JButton("Kembali");
@@ -47,10 +46,13 @@ public class DaftarBuku07175 {
         btnback07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MenuAdmin07175 menuAdmin07175 = new MenuAdmin07175();
+                MenuAnggota07175 m = new MenuAnggota07175(cek);
                 logV07175.dispose();
             }
         });
     }
     
+    public static void main(String[] args) {
+        DaftarRiwayat07175 d = new DaftarRiwayat07175(1);
+    }
 }

@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 
 public class MenuAdmin07175 {
     JFrame log07175 = new JFrame();
-    JButton btnview07175, btnhapus07175, btnreset07175, btndaftarbuku07175, btnhapusbuku07175, btneditbuku07175, btndaftarpeminjam07175, verif07175, btntambahbuku07175;
+    JButton btnview07175, btnhapus07175, btnreset07175, btndaftarbuku07175, btnhapusbuku07175, btneditbuku07175, btndaftarpeminjam07175, verif07175, btntambahbuku07175, logout;
     int index;
     
     public MenuAdmin07175() {
         
-        log07175.setSize(300, 600);
+        log07175.setSize(300, 680);
         log07175.setLayout(null);
         log07175.setLocationRelativeTo(null);
         log07175.getContentPane().setBackground(Color.WHITE);
@@ -64,6 +64,11 @@ public class MenuAdmin07175 {
         verif07175.setFont(new Font("Arial" , Font.BOLD,17));
         log07175.add(verif07175);
         
+        logout = new JButton("Logout");
+        logout.setBounds(5, 550 , 275 , 50);
+        logout.setFont(new Font("Arial" , Font.BOLD,17));
+        log07175.add(logout);
+        
         log07175.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         log07175.setVisible(true);
         log07175.setLocationRelativeTo(null);
@@ -79,7 +84,7 @@ public class MenuAdmin07175 {
         btnhapus07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                HapusAnggota07175 h = new HapusAnggota07175();
                 log07175.dispose();
             }
         });
@@ -87,7 +92,7 @@ public class MenuAdmin07175 {
         btnreset07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                resetPassword07175 r = new resetPassword07175();
                 log07175.dispose();
             }
         });
@@ -103,7 +108,7 @@ public class MenuAdmin07175 {
         btntambahbuku07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                tambahBUku07175 b = new tambahBUku07175();
                 log07175.dispose();
             }
         });
@@ -111,7 +116,7 @@ public class MenuAdmin07175 {
         btnhapusbuku07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                HapusBuku07175 h = new HapusBuku07175();
                 log07175.dispose();
             }
         });
@@ -119,7 +124,7 @@ public class MenuAdmin07175 {
         btneditbuku07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                editBuku07175 ed = new editBuku07175();
                 log07175.dispose();
             }
         });
@@ -135,7 +140,15 @@ public class MenuAdmin07175 {
         verif07175.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                VerifikasiPengemblian07175 v = new VerifikasiPengemblian07175();
+                log07175.dispose();
+            }
+        });
+        
+        logout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginAdmin07175 loginAdmin = new loginAdmin07175();
                 log07175.dispose();
             }
         });

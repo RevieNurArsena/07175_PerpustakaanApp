@@ -4,6 +4,7 @@ public class AnggotaEntity07175 extends UserEntity07175{
     private String noTelp07175, alamat07175;
     private int id07175;
 
+    
     public AnggotaEntity07175(String nama07175, String password07175, 
             String noTelp07175, String alamat07175) {
         super(nama07175, password07175);

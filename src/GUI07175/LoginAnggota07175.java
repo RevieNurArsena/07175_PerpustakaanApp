@@ -73,7 +73,7 @@ public class LoginAnggota07175 {
                         if (cek07175 > 0){
                             JOptionPane.showMessageDialog(null, "Login Berhasil", 
                                 "information", JOptionPane.INFORMATION_MESSAGE);
-                            //MenuMurid07175 menuMurid07175 = new MenuMurid07175(cek07175);
+                            MenuAnggota07175 m = new MenuAnggota07175(cek07175);
                             log07175.dispose();
                             
                             log07175.dispose();
