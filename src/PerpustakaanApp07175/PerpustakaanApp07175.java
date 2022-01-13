@@ -12,29 +12,6 @@ public class PerpustakaanApp07175 {
     public static PeminjamanControllerInterface07175 peminjamanController07175 = new PeminjamanControllerInterfaceImpl07175();
     
     public static void main(String[] args) {
-//        int pilih07175;
-//        do{
-//            System.out.println("SELAMAT DATANG");
-//            System.out.println("1. REGISTRASI");
-//            System.out.println("2. LOGIN");
-//            System.out.println("3. KELUAR");
-//            
-//            System.out.print("Pilihan : ");
-//            pilih07175 = input07175.nextInt();
-//            
-//            switch(pilih07175){
-//                case 1:
-//                    registrasi07175();
-//                    break;
-//                case 2:
-//                    login07175();
-//                    break;
-//                case 3:
-//                    System.out.println("KELUAR");
-//                    break;
-//            }
-//            
-//        }while(pilih07175 < 2);
             menuAwal07175();
     }
     

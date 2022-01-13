@@ -45,7 +45,7 @@ public class EditAnggota {
             tableview07175 = new JTable();
             scroll = new JScrollPane(tableview07175);
             scroll.setBounds(30, 100, 430, 50);
-            tableview07175.setModel(anggota.daftarDataMurid07175(cek07175));
+            tableview07175.setModel(anggota.daftarDataAnggota07175(cek07175));
             log07175.add(scroll);
             
             labelpass07175 = new JLabel("Password : ");

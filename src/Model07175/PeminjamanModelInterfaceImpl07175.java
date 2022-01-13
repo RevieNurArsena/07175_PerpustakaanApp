@@ -108,9 +108,7 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
                 buku07175.setIsbn07175(rs07175.getString("buku_isbn"));
                 buku07175.setJudul07175(rs07175.getString("buku_judul"));
                 peminjaman07175.setBuku07175(buku07175);
-                //AnggotaEntity07175 anggota07175 = new AnggotaEntity07175(rs07175.getString("anggota_nama"), rs07175.getString("anggota_password"));
                 
-                //peminjaman07175.setAnggota07175(anggota07175);
                 peminjaman07175.setTglPeminjaman07175(rs07175.getDate("peminjaman_tgl"));
                 peminjaman07175.setTglPengembalian07175(rs07175.getDate("pengembalian_tgl"));
                 peminjaman07175.setStatusPeminjaman07175(rs07175.getBoolean("status"));
@@ -123,3 +121,4 @@ public class PeminjamanModelInterfaceImpl07175 implements PeminjamanModelInterfa
     }
     
 }
+

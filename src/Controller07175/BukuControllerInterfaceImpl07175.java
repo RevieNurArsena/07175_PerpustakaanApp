@@ -91,8 +91,5 @@ public class BukuControllerInterfaceImpl07175 implements BukuControllerInterface
             databuku07175.addRow(data07175);
         }
         return databuku07175;
-    }
-    
-    
-    
+    }    
 }

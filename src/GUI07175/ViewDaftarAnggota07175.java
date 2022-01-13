@@ -37,7 +37,7 @@ public class ViewDaftarAnggota07175 {
         tableview07175 = new JTable();
         scroll = new JScrollPane(tableview07175);
         scroll.setBounds(30, 100, 620, 400);
-        tableview07175.setModel(anggota.daftarDataMurid07175());
+        tableview07175.setModel(anggota.daftarDataAnggota07175());
         logV07175.add(scroll);
         
         btnback07175 = new JButton("Kembali");

@@ -54,7 +54,7 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
         return cari07175;
     }
     
-    public DefaultTableModel daftarDataMurid07175(){
+    public DefaultTableModel daftarDataAnggota07175(){
         DefaultTableModel dataAnggota07175 = new DefaultTableModel();
         
         Object [] kolom07175 = {"ID", "USERNAME" ,"PASSWORD", "NO TELPON", "ALAMAT"};
@@ -74,7 +74,7 @@ public class AnggotaControllerInterfaceImpl07175 implements AnggotaControllerInt
         return dataAnggota07175;
     }
     
-    public DefaultTableModel daftarDataMurid07175(int cek07175){
+    public DefaultTableModel daftarDataAnggota07175(int cek07175){
         int i = cari07175(cek07175);
         DefaultTableModel dataAnggota07175 = new DefaultTableModel();
         

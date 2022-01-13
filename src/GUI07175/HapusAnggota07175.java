@@ -33,7 +33,7 @@ public class HapusAnggota07175 {
         tableview07175 = new JTable();
         scroll = new JScrollPane(tableview07175);
         scroll.setBounds(30, 100, 620, 100);
-        tableview07175.setModel(anggota.daftarDataMurid07175());
+        tableview07175.setModel(anggota.daftarDataAnggota07175());
         logV07175.add(scroll);
         
         labelid07175 = new JLabel("ID Anggota : ");

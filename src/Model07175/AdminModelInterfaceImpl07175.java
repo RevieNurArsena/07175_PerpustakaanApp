@@ -23,6 +23,5 @@ public class AdminModelInterfaceImpl07175 implements AdminModelInterface07175{
         }
         
         return login07175;
-    }
-    
+    }   
 }
